@@ -1,0 +1,67 @@
+* {
+    font-family: "Courier New";
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.container {
+    width:100%;
+    min-height:90vh;
+}
+
+.clock-wrap {
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size: 100px;
+    color:white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-image: linear-gradient(red, blue);
+}
+
+.date-wrap {
+    display:flex;
+    align-items:center;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: bold;
+
+    position:absolute;
+    left:20%;
+    top:20%;
+}
+
+.tmr-container {
+    position:absolute;
+    left: 50%;
+    top: 70%;
+    gap:1rem;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.timer-wrap {
+    display:flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+button {
+    width:300px;
+    height:50px;
+    font-size: 30px;
+}
+
+
+button:checked > :nth-child(2) {
+    display:block;
+}

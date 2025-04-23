@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <div class="container">
+        <div class="date-wrap">
+            <span id="weekday"></span>
+            <span id="date"></span>
+            <span id="month"></span>   
+        </div>
+
+    
+        <div class="clock-wrap">
+            <span id="h"></span>
+            <span>:</span>
+            <span id="m"></span>
+            <span>:</span>
+            <span id="s"></span>
+        </div>
+    </div>
+
+    <div class="tmr-container">
+        <button onclick="timer()"> TIMER </button>
+        <div class="timer-wrap">
+            <span id="hTmr"></span>  <span>:</span>                                       
+            <span id="mTmr"></span>  <span>:</span>                                       
+            <span id="sTmr"></span>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
