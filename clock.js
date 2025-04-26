@@ -1,57 +1,58 @@
 
 // CLOCK
 
-let h = document.getElementById("h");
-let m = document.getElementById("m");
-let s = document.getElementById("s");
+let hours = document.getElementById("h");
+let minutes = document.getElementById("m");
+let seconds = document.getElementById("s");
 
 setInterval(() => {
     
     let Time = new Date();
     
-    h.innerHTML = Time.getHours();
-    m.innerHTML = Time.getMinutes();
-    s.innerHTML = Time.getSeconds();
+    hours.innerHTML = Time.getHours();
+    minutes.innerHTML = Time.getMinutes();
+    seconds.innerHTML = Time.getSeconds();
 
-        if (h.innerHTML < 10) {
-            h.innerHTML = "0" + h.innerHTML;
+        if (hours.innerHTML < 10) {
+            hours.innerHTML = "0" + hours.innerHTML;
         }
-        if (m.innerHTML < 10) {
-            m.innerHTML = "0" + m.innerHTML;
-        }m
-        
-        if (s.innerHTML < 10) {
-            s.innerHTML = "0" + s.innerHTML;
+        if (minutes.innerHTML < 10) {
+            minutes.innerHTML = "0" + minutes.innerHTML;
+        }
+        if (seconds.innerHTML < 10) {
+            seconds.innerHTML = "0" + seconds.innerHTML;
         }
     }, 1000 
 )
 
-let weekdayEle = document.getElementById("weekday");
-let dateEle = document.getElementById("date");
-let monthEle = document.getElementById("month");
+// DATE
+
+let weekdayElement = document.getElementById("weekday");
+let dateElement = document.getElementById("date");
+let monthElement = document.getElementById("month");
 
 setInterval(() => {
 
 let currentDate = new Date();
 
-    monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ]
-    weekdayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    weekdayNames = ["Sunday,", "Monday,", "Tuesday,", "Wednesday,", "Thursday,", "Friday,", "Saturday,"]
     
     let weekday = weekdayNames[currentDate.getDay()];
-    let dateNr = currentDate.getDate();
+    let dateNumber = currentDate.getDate();
     let month = monthNames[currentDate.getMonth()];
     
-    weekdayEle.innerHTML = weekday;
-    monthEle.innerHTML = month;
+    weekdayElement.innerHTML = weekday;
+    monthElement.innerHTML = month;
     
-    if (dateNr === 1 || dateNr === 21 || dateNr === 31) {                                                              //how to make superscripted?
-        date.innerHTML = dateNr + "st";
-    } else if (dateNr === 2 || dateNr === 22) {
-        date.innerHTML = dateNr + "nd";
-    } else if (dateNr === 3) {
-        date.innerHTML = dateNr + "rd";
+    if (dateNumber === 1 || dateNumber === 21 || dateNumber === 31) {                                                              
+        date.innerHTML = dateNumber + "<span><sup>st</sup></span>";
+    } else if (dateNumber === 2 || dateNumber === 22) {
+        date.innerHTML = dateNumber + "<span><sup>nd</sup></span>";
+    } else if (dateNumber === 3) {
+        date.innerHTML = dateNumber + "<span><sup>rd</sup></span>";
     } else {
-        date.innerHTML = dateNr + "th";
+        date.innerHTML = dateNumber + "<span><sup>th</sup></span>";
     }
 
 }
@@ -59,27 +60,36 @@ let currentDate = new Date();
 
 // TIMER
 
-let hTmr = document.getElementById("hTmr");
-let mTmr = document.getElementById("mTmr");
-let sTmr = document.getElementById("sTmr");
+let hoursTimer = document.getElementById("hTmr");
+let minutesTimer = document.getElementById("mTmr");
+let secondsTimer = document.getElementById("sTmr");
 
 function timer () {
 
     let timerDate = new Date();
 
-    hTmr.innerHTML = timerDate.getHours();
-    mTmr.innerHTML = timerDate.getMinutes();
-    sTmr.innerHTML = timerDate.getSeconds();
+    hoursTimer.innerHTML = timerDate.getHours();
+    minutesTimer.innerHTML = timerDate.getMinutes();
+    secondsTimer.innerHTML = timerDate.getSeconds();
 
-    if (hTmr.innerHTML < 10) {
-        hTmr.innerHTML = "0" + hTmr.innerHTML;
+    if (hoursTimer) {
+        hoursTimer.innerHTML = hoursTimer.innerHTML + "<span>:</span>";
     }
-    if (mTmr.innerHTML < 10) {
-        mTmr.innerHTML = "0" + mTmr.innerHTML;
+    if (minutesTimer) {
+        minutesTimer.innerHTML = minutesTimer.innerHTML + "<span>:</span>";
+    }
+    if (secondsTimer) {
+        secondsTimer.innerHTML = secondsTimer.innerHTML;
+    }
+
+    if (hoursTimer.innerHTML < 10) {
+        hoursTimer.innerHTML = "0" + hoursTimer.innerHTML + "<span>:</span>";
+    }
+    if (minutesTimer.innerHTML < 10) {
+        minutesTimer.innerHTML = "0" + minutesTimer.innerHTML + "<span>:</span>";
     }
     
-    if (sTmr.innerHTML < 10) {
-        sTmr.innerHTML = "0" + sTmr.innerHTML;
+    if (secondsTimer.innerHTML < 10) {
+        secondsTimer.innerHTML = "0" + secondsTimer.innerHTML;
     }
 }
-
